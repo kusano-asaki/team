@@ -47,6 +47,11 @@
                         <%= link_to I18n.t('views.button.delete'), team_assign_path(@team, assign), method: :delete, class: 'btn btn-sm btn-danger' %>
                         <% end %>
                       </td>
+                      <td>
+                        <% if assign.team.owner == current_user && !(assign.user_id == @team.owner_id) %>
+                        <%= link_to '権限移動' , leader_change_team_path(@team, assign_id: assign.id), method: :patch, class: 'btn btn-sm btn-danger' %>
+                        <% end %>
+                      </td>
                     </tr>
                   <% end %>
                 </tbody>
