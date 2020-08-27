@@ -53,6 +53,7 @@ class TeamsController < ApplicationController
     change_user_id = Assign.find(assign_id).user_id
     # binding.pry
     @team.update(owner_id: change_user_id)
+    TeamMailer.team_mail(@team).deliver
     redirect_to team_url(@team), notice: 'チームリーダーを変更しました'
   end
 
