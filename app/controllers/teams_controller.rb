@@ -17,6 +17,7 @@ class TeamsController < ApplicationController
 
   def edit; end
 
+
   def create
     @team = Team.new(team_params)
     @team.owner = current_user
