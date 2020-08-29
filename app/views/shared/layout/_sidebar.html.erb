@@ -37,7 +37,7 @@
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
-              <% if agenda.user == current_user || agenda.team.owner == current_user %>
+              <% if agenda.user == current_user %>
               <%= link_to '削除', agenda_path(agenda), method: :delete, class:'nav-link d-inline-flex' %>
               <% end %>
             <ul class="nav nav-treeview" style="display: block;">
